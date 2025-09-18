@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ... */
+
+@layer base {
+  :root {
+    /* Brand: royal purple + indigo */
+    --background: 0 0% 100%;
+    --foreground: 232 47% 12%; /* indigo-950-ish */
+    --card: 0 0% 100%;
+    --card-foreground: 232 47% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 232 47% 12%;
+    --primary: 262 83% 58%; /* purple-600 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 226 100% 97%; /* indigo-50 */
+    --secondary-foreground: 232 47% 12%;
+    --muted: 226 100% 97%;
+    --muted-foreground: 234 14% 43%; /* indigo-500-ish */
+    --accent: 242 76% 54%; /* indigo-600 */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 2 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 228 45% 90%; /* indigo-200 */
+    --input: 228 45% 90%;
+    --ring: 262 83% 58%;
+
+    --chart-1: 12 76% 61%;
+
+    --chart-2: 173 58% 39%;
+
+    --chart-3: 197 37% 24%;
+
+    --chart-4: 43 74% 66%;
+
+    --chart-5: 27 87% 67%;
+
+    --radius: 0.5rem
+  }
+  .dark {
+    /* Dark mode tuned to royal purple + indigo */
+    --background: 240 35% 10%;
+    --foreground: 0 0% 98%;
+    --card: 240 35% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 35% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 265 89% 66%; /* purple-500/600 */
+    --primary-foreground: 240 35% 10%;
+    --secondary: 242 47% 18%; /* indigo-900 */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 242 47% 18%;
+    --muted-foreground: 226 70% 80%;
+    --accent: 242 76% 60%;
+    --accent-foreground: 240 35% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 242 47% 18%;
+    --input: 242 47% 18%;
+    --ring: 265 89% 66%;
+
+    --chart-1: 220 70% 50%;
+
+    --chart-2: 160 60% 45%;
+
+    --chart-3: 30 80% 55%;
+
+    --chart-4: 280 65% 60%;
+
+    --chart-5: 340 75% 55%
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
