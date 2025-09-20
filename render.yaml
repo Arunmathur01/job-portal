@@ -17,8 +17,8 @@ services:
   - type: web
     name: job-portal-frontend
     env: static
-    buildCommand: npm run install-frontend && npm run build-frontend
-    staticPublishPath: ./Frontend/dist
+    buildCommand: cd Frontend && npm install && npm run build
+    staticPublishPath: Frontend/dist
     routes:
       - type: rewrite
         source: /*
