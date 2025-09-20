@@ -4,8 +4,8 @@ services:
     name: job-portal-backend
     env: node
     plan: free
-    buildCommand: npm run install-backend
-    startCommand: npm run start-backend
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
