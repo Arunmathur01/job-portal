@@ -118,14 +118,12 @@ const Login = () => {
 
           {loading ? (
             <div className="flex items-center justify-center my-10">
-              <div className="spinner-border text-primary" role="status">
-                <span className="sr-only">Loading...</span>
-              </div>
+              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
             </div>
           ) : (
             <button
               type="submit"
-              className="w-1/2 py-3 my-3 text-primary-foreground flex items-center justify-center max-w-7xl mx-auto bg-accent rounded-md"
+              className="w-full py-3 my-3 text-white flex items-center justify-center bg-blue-600 hover:bg-blue-700 rounded-md transition-colors"
             >
               Login
             </button>
@@ -135,7 +133,7 @@ const Login = () => {
             <p className="text-foreground text-center my-2">
               Create new Account{" "}
               <Link to="/register" className="text-primary">
-                <button className=" w-1/2 py-3 my-3 text-primary-foreground flex items-center justify-center max-w-7xl mx-auto bg-accent rounded-md">
+                <button className="w-full py-3 my-3 text-white flex items-center justify-center bg-green-600 hover:bg-green-700 rounded-md transition-colors">
                   Register
                 </button>
               </Link>
