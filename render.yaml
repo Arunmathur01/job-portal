@@ -1,0 +1,25 @@
+services:
+  # Backend Service
+  - type: web
+    name: job-portal-backend
+    env: node
+    plan: free
+    buildCommand: cd Backend && npm install
+    startCommand: cd Backend && npm run dev
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/health
+
+  # Frontend Service  
+  - type: web
+    name: job-portal-frontend
+    env: static
+    buildCommand: cd Frontend && npm install && npm run build
+    staticPublishPath: ./Frontend/dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

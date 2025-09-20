@@ -1,0 +1,22 @@
+{
+  "name": "job-portal",
+  "version": "1.0.0",
+  "description": "MERN Stack Job Portal Application",
+  "main": "Backend/index.js",
+  "scripts": {
+    "install-backend": "cd Backend && npm install",
+    "install-frontend": "cd Frontend && npm install",
+    "install-all": "npm run install-backend && npm run install-frontend",
+    "build-frontend": "cd Frontend && npm run build",
+    "start-backend": "cd Backend && npm start",
+    "dev-backend": "cd Backend && npm run dev",
+    "dev-frontend": "cd Frontend && npm run dev",
+    "dev": "concurrently \"npm run dev-backend\" \"npm run dev-frontend\""
+  },
+  "keywords": ["mern", "job-portal", "react", "nodejs", "mongodb"],
+  "author": "Arunmathur01",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

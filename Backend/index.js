@@ -17,7 +17,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 const corsOptions = {
-  origin: ["http://localhost:5173"],
+  origin: [
+    "http://localhost:5173",
+    "https://job-portal-frontend.onrender.com",
+    "https://job-portal-frontend-*.onrender.com"
+  ],
   credentials: true,
 };
 
@@ -27,6 +31,11 @@ const PORT = process.env.PORT || 5001;
 
  
 //api's
+
+// Health check endpoint
+app.get("/api/health", (req, res) => {
+  res.status(200).json({ message: "Server is running" });
+});
 
 app.use("/api/user", userRoute);
 app.use("/api/company", companyRoute);
