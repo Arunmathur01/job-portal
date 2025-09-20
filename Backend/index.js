@@ -34,7 +34,27 @@ const PORT = process.env.PORT || 5001;
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
-  res.status(200).json({ message: "Server is running" });
+  res.status(200).json({ 
+    status: "success",
+    message: "Server is running",
+    timestamp: new Date().toISOString(),
+    port: PORT
+  });
+});
+
+// Root endpoint for testing
+app.get("/", (req, res) => {
+  res.status(200).json({ 
+    status: "success",
+    message: "Job Portal API is running",
+    endpoints: {
+      health: "/api/health",
+      user: "/api/user",
+      company: "/api/company",
+      job: "/api/job",
+      application: "/api/application"
+    }
+  });
 });
 
 app.use("/api/user", userRoute);
@@ -43,6 +63,12 @@ app.use("/api/job", jobRoute);
 app.use("/api/application", applicationRoute);
 
 app.listen(PORT, () => {
-  connectDB();
   console.log(`Server is running on port ${PORT}`);
+  console.log(`Health check available at: http://localhost:${PORT}/api/health`);
+  
+  // Connect to database (non-blocking)
+  connectDB().catch((error) => {
+    console.error("Database connection failed:", error.message);
+    console.log("Server will continue running without database connection");
+  });
 });
