@@ -1,4 +1,7 @@
-export const USER_API_ENDPOINT = "http://localhost:5011/api/user";
-export const JOB_API_ENDPOINT = "http://localhost:5011/api/job";
-export const APPLICATION_API_ENDPOINT = "http://localhost:5011/api/application";
-export const COMPANY_API_ENDPOINT = "http://localhost:5011/api/company";
+// Update these URLs to match your deployed backend
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://job-portal-backend.onrender.com";
+
+export const USER_API_ENDPOINT = `${BACKEND_URL}/api/user`;
+export const JOB_API_ENDPOINT = `${BACKEND_URL}/api/job`;
+export const APPLICATION_API_ENDPOINT = `${BACKEND_URL}/api/application`;
+export const COMPANY_API_ENDPOINT = `${BACKEND_URL}/api/company`;

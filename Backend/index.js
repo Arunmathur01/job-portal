@@ -20,7 +20,8 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://job-portal-frontend.onrender.com",
-    "https://job-portal-frontend-*.onrender.com"
+    "https://job-portal-frontend-*.onrender.com",
+    "https://*.onrender.com" // Allow all Render subdomains
   ],
   credentials: true,
 };
