@@ -4,8 +4,8 @@ services:
     name: job-portal-backend
     env: node
     plan: free
-    buildCommand: cd Backend && npm install
-    startCommand: cd Backend && npm run dev
+    buildCommand: npm run install-backend
+    startCommand: npm run start-backend
     envVars:
       - key: NODE_ENV
         value: production
@@ -17,7 +17,7 @@ services:
   - type: web
     name: job-portal-frontend
     env: static
-    buildCommand: cd Frontend && npm install && npm run build
+    buildCommand: npm run install-frontend && npm run build-frontend
     staticPublishPath: ./Frontend/dist
     routes:
       - type: rewrite
