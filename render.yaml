@@ -19,6 +19,10 @@ services:
     env: static
     buildCommand: cd Frontend && npm install && npm run build
     staticPublishPath: Frontend/dist
+    headers:
+      - path: /*
+        name: _redirects
+        value: /*    /index.html   200
     routes:
       - type: rewrite
         source: /*
