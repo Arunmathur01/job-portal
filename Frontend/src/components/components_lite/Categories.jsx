@@ -52,7 +52,7 @@ const Categories = () => {
         <CarouselContent className="-ml-2">
           {Category.map((category, index) => {
             return (
-              <CarouselItem className="pl-2 basis-1/2 md:basis-1/3 lg:basis-1/4">
+              <CarouselItem key={index} className="pl-2 basis-1/2 md:basis-1/3 lg:basis-1/4">
                 <Button onClick={() => searchjobHandler(category)} className="w-full">
                   {category}
                 </Button>
